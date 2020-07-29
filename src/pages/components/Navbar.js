@@ -10,19 +10,12 @@ const Navbar = () => {
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
-          <p>Hahaha</p>
-          {/* <li className="nav-item active">
-            <NavLink className="nav-link" href="#">Home <span class="sr-only">(current)</span></NavLink>
+          <li className="nav-item active">
+            <NavLink className="nav-link" to="/">Home <span class="sr-only">(current)</span></NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" href="#">Features</NavLink>
+            <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" href="#">Pricing</NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</NavLink>
-          </li> */}
         </ul>
       </div>
     </nav>
