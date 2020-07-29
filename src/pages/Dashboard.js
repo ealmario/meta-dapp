@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Dashboard = () => {
+const Dashboard = ({addr}) => {
+  console.log(addr);
   return(
     <>
       <div className="container d-flex justify-content-center align-items-center flex-column py-3">
@@ -12,14 +13,13 @@ const Dashboard = () => {
             Metamask User
           </div>
           <div className="card-body">
-            <h5 className="card-title">User Details</h5>
-            <p className="card-text">__USER ETH ADDRESS__</p>
+            <p className="card-text">ETH Address: {addr === undefined ? 'Address Not Found' : addr}</p>
             <p className="card-text">__USER NETWORK__</p>
             <p className="card-text">ECR TOKENS:</p>
             <h1 className="card-text">__ ECR TOKENS__</h1>
           </div>
           <div className="card-footer">
-            <button class="btn btn-primary">Get Tokens</button>
+            <button className="btn btn-primary">Get Tokens</button>
           </div>
         </div>
       </div>
