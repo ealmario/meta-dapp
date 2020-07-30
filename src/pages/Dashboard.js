@@ -10,6 +10,16 @@ const Dashboard = ({ethAddr, ethNet, tokenAddr, tokenSymbol, tokenDecimals, toke
     return <Redirect to="/" />
   }
 
+  ethereum
+  .request({ method: 'eth_accounts' })
+  .then( accounts => {
+    token.methods.balanceOf(accounts[0]).call()
+    .then(bal => setTokenBal(bal))
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+
   // Get ERC20 Tokens 
   const handleGetToken = async (e) => {
     try {
@@ -51,7 +61,7 @@ const Dashboard = ({ethAddr, ethNet, tokenAddr, tokenSymbol, tokenDecimals, toke
     ethereum.on('chainChanged', (_chainId) => {
       setEthNet(_chainId);
     });
-   
+
   return(
     <>
       <div className="container d-flex justify-content-center align-items-center flex-column py-3">
