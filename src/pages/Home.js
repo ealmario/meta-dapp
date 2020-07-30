@@ -3,9 +3,6 @@ import { Redirect } from 'react-router-dom';
 import Alert from './components/Alert';
 
 const Home = ({ ethereum, setEthAddr, setEthNet }) => { 
-  if (ethereum) {
-    return <Redirect to="/dashboard" />
-  }
 
   const handleClick = async (e) => {
     // Enable MetaMask
