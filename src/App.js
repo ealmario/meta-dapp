@@ -288,18 +288,32 @@ function App() {
 
   // Ethereum
   const ethereum = window.ethereum;
-  
+
+  // States to pass in dashboard route
+  const [ethAddr, setEthAddr] = useState('');
+  const [ethNet, setEthNet] = useState('');
+
   return (
     <BrowserRouter>
       <div className="App">
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home ethereum={ethereum} setEthAddr={setEthAddr} setEthNet={setEthNet}/>
           </Route>
 
           <Route exact path="/dashboard">
-            <Dashboard />
+            <Dashboard 
+              ethereum={ethereum}
+              ethAddr={ethAddr} 
+              ethNet={ethNet} 
+              tokenAddr={tokenAddr}
+              tokenSymbol={tokenSymbol}
+              tokenDecimals={tokenDecimals}
+              token={token}
+              setEthAddr={setEthAddr}
+              setEthNet={setEthNet}
+            />
           </Route>
 
           <Route path="*">
