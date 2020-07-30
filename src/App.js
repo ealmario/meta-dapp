@@ -6,20 +6,6 @@ import Dashboard from './pages/Dashboard';
 import Page404 from './pages/Page404';
 
 function App() {
-  const ethereum = window.ethereum;
-
-  const [addr, setAddr] = useState('');
-
-  async function getAccount() {
-    const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
-    const account = accounts[0];
-    setAddr(account);
-  }
-  // if (ethereum && ethereum.isMetaMask) {
-  //   ethereum.on('accountsChanged', (accounts) => {
-  //     setAddr(accounts[0]);
-  //   });
-  // }
   
   return (
     <BrowserRouter>
@@ -27,10 +13,10 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <Home ethereum={ethereum} getAccount={getAccount}/>
+            <Home />
           </Route>
 
-          <Route exact path="/dashboard" addr={addr}>
+          <Route exact path="/dashboard">
             <Dashboard />
           </Route>
 
