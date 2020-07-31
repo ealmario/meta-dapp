@@ -11,8 +11,8 @@ function App() {
   const web3 = new Web3(Web3.givenProvider);
 
   // ERC20 Token
-  const tokenAddr = '0x0175584840565f48d557a376b82B3f424F2D45f2';
-  const tokenSymbol = 'MDPT';
+  const tokenAddr = '0xd1E087EC7e65dbC2960c7bDBF8866704316b604d';
+  const tokenSymbol = 'BMDT';
   const tokenDecimals = 0;
   const tokenABI = [
     {
