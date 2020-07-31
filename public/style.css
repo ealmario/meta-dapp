@@ -1,0 +1,69 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: url('./1082.jpg') no-repeat center center fixed; 
+  font-family: 'Quicksand', sans-serif;
+}
+
+nav {
+  background: rgba(0,0,0,0);
+}
+
+h1,
+.navbar-brand {
+  font-weight: bold;
+}
+
+.nav-item {
+  border-radius: 15px;
+  transition: 500ms ease;
+}
+
+.nav-item:hover{
+  background-color: #b671e4;
+}
+
+.content-container {
+  height: 100vh;
+}
+
+.card {
+  border: none;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+}
+
+.card-header,
+.card-footer {
+  background: #fff;
+  border: none;
+  font-weight: bold;
+}
+
+p.card-text {
+  color: #000;
+  font-size: 0.875rem;
+}
+
+.value {
+  color: #888;
+}
+
+.btn-custom {
+  background-color: #934BC4;
+  border-radius: 20px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  transition: 300ms ease;
+}
+
+.btn-custom:hover {
+  background-color: #7c37a9;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+  color: #fff;
+}

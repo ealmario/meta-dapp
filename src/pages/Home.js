@@ -27,11 +27,11 @@ const Home = ({ ethereum, setEthAddr, setEthNet, ethAddr }) => {
 
   return(
     <>
-      <div className="jumbotron jumbotron-fluid hero-section d-flex justify-content-center align-items-center m-0">
-        <div className="container d-flex justify-content-center align-items-center flex-column">
-          <h1 className="m-0">Welcome to MetaDapp</h1>
+      <div className="container content-container d-flex justify-content-center align-items-center flex-column">
+        <div className="p-3 h-50 d-flex flex-column justify-content-center align-items-center">
+          <h1 className="m-0 text-center">Welcome to MetaDapp</h1>
           <p className="lead">Check your tokens</p>
-          {ethereum === undefined ? <Alert /> : <button className="btn btn-success" onClick={handleClick}>{ethAddr ? "View Tokens" : "Connect to Metamask"}</button>}
+          {ethereum === undefined ? <Alert /> : <button className="btn btn-custom mt-3" onClick={handleClick}>{ethAddr ? "View Tokens" : "Connect to Metamask"}</button>}
         </div>
       </div>
     </>

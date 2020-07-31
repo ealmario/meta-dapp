@@ -65,32 +65,38 @@ const Dashboard = ({ethAddr, ethNet, tokenAddr, tokenSymbol, tokenDecimals, toke
 
   return(
     <>
-      <div className="container d-flex justify-content-center align-items-center flex-column py-3">
-        
-        <div className="card text-center mt-5">
-          <div className="card-header">
-            Metamask User
-          </div>
-          <div className="card-body">
-            <p className="card-text">ETH Address: {ethAddr}</p>
-            <p className="card-text">ETH Network: {ethNet === '0x3' ? "Ropsten Network" : "Please Select Ropsten"}</p>
-            <p className="card-text">MDPT Tokens:</p>
-            <h1 className="card-text">{ tokenBal === '' ? 0 : tokenBal }</h1>
+      <div className="container content-container d-flex justify-content-center align-items-center flex-column py-3">
+        <div className="row">
+          <div className="col-12">
+
             {tokenAddMsg ? 
               <div className="alert alert-success alert-dismissible fade show d-flex flex-column" role="alert">
-                <p className="m-0">Tokens Successfully Added!</p> 
+                <p className="m-0">Tokens Successfully Added. Thank you!</p> 
                 <button type="button" className="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div> : ""
             }
+
+            <div className="card text-center py-4">
+              <div className="card-header">
+                Metamask User
+              </div>
+              <div className="card-body">
+                <p className="card-text">ETH Address: <span className="value">{ethAddr ? ethAddr : "Address Not Available"}</span></p>
+                <p className="card-text">ETH Network: <span className="value">{ethNet === '0x3' ? "Ropsten Network" : "Please Select Ropsten"} </span></p>
+                <p className="card-text">MDPT Tokens:</p>
+                <h1 className="card-text"><span className="value">{ tokenBal === '' ? 0 : tokenBal }</span><i class="fas fa-coins fa-sm ml-2"></i></h1>
+    
+              </div>
+              {tokenBal === '0' ? 
+                <div className="card-footer">
+                  <button className="btn btn-custom" onClick={handleGetToken}>Get Tokens</button>
+                </div> : ""
+              }
+            </div>
+
           </div>
-          {tokenBal !== 0 ? 
-            <div className="card-footer">
-              <button className="btn btn-primary" onClick={handleGetToken}>Get Tokens</button>
-            </div> :
-            ""
-          }
         </div>
       </div>
     </>

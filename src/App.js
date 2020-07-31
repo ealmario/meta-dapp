@@ -293,6 +293,8 @@ function App() {
   const [ethAddr, setEthAddr] = useState('');
   const [ethNet, setEthNet] = useState('');
 
+  console.log(ethNet);
+
   return (
     <BrowserRouter>
       <div className="App">
