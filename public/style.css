@@ -50,6 +50,10 @@ p.card-text {
   color: #888;
 }
 
+.token-bal {
+  color: #934BC4;
+}
+
 .btn-custom {
   background-color: #934BC4;
   border-radius: 20px;

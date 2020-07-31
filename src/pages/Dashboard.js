@@ -86,7 +86,7 @@ const Dashboard = ({ethAddr, ethNet, tokenAddr, tokenSymbol, tokenDecimals, toke
                 <p className="card-text">ETH Address: <span className="value">{ethAddr ? ethAddr : "Address Not Available"}</span></p>
                 <p className="card-text">ETH Network: <span className="value">{ethNet === '0x3' ? "Ropsten Network" : "Please Select Ropsten"} </span></p>
                 <p className="card-text">MDPT Tokens:</p>
-                <h1 className="card-text"><span className="value">{ tokenBal === '' ? 0 : tokenBal }</span><i class="fas fa-coins fa-sm ml-2"></i></h1>
+                <h1 className="card-text token-bal">{ tokenBal === '' ? 0 : tokenBal }<i class="fas fa-coins fa-xs ml-3"></i></h1>
     
               </div>
               {tokenBal === '0' ? 
