@@ -6,15 +6,16 @@ const Dashboard = ({ethAddr, ethNet, tokenAddr, tokenSymbol, tokenDecimals, toke
   const [tokenBal, setTokenBal] = useState('');
   const [tokenAddMsg, setTokenAddMsg] = useState(false);
 
+  // Redirect
   if(!ethereum) {
     return <Redirect to="/" />
   }
 
-  ethereum
-  .request({ method: 'eth_accounts' })
+  // Retrieve account tokens if any
+  ethereum.request({ method: 'eth_accounts' })
   .then( accounts => {
     token.methods.balanceOf(accounts[0]).call()
-    .then(bal => setTokenBal(bal))
+      .then(bal => setTokenBal(bal))
   })
   .catch((err) => {
     console.error(err);
@@ -54,8 +55,8 @@ const Dashboard = ({ethAddr, ethNet, tokenAddr, tokenSymbol, tokenDecimals, toke
   }
 
     // Address/ChainID Event
-     ethereum.on('accountsChanged', (accounts) => {
-        setEthAddr(accounts[0]);
+    ethereum.on('accountsChanged', (accounts) => {
+      setEthAddr(accounts[0]);
     });
   
     ethereum.on('chainChanged', (_chainId) => {

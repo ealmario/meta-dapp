@@ -289,7 +289,7 @@ function App() {
   // Ethereum
   const ethereum = window.ethereum;
 
-  // States to pass in dashboard route
+  // States to pass to dashboard
   const [ethAddr, setEthAddr] = useState('');
   const [ethNet, setEthNet] = useState('');
 
@@ -299,7 +299,12 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <Home ethereum={ethereum} setEthAddr={setEthAddr} setEthNet={setEthNet}/>
+            <Home 
+            ethereum={ethereum} 
+            setEthAddr={setEthAddr} 
+            setEthNet={setEthNet}
+            ethAddr={ethAddr}
+            />
           </Route>
 
           <Route exact path="/dashboard">
